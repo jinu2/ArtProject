@@ -1,0 +1,48 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.live-stream .down-content h4 {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 55px;
+}
+
+.templatemo-item {
+    min-width: 100px;
+    min-height: 80px;
+    border-radius: 7px;
+}
+
+.gaming-library .item ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gaming-library .item ul li:first-child {
+    width: 110px;
+    margin-right: 20px;
+}

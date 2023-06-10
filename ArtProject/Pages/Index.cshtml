@@ -1,0 +1,237 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "ArtProject";
+
+}
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-content">
+
+                    <!-- ***** Banner Start ***** -->
+                    <div class="main-banner">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="header-text">
+                                    <h4><em>Welcome To ArtProject</em></h4>
+                                    <h6 style="color:grey"><em>Discover</em> the artists and their works, find the exhibition that will inspire you and brighten your day, and buy tickets for the exhibition.</h6>
+                                    <div class="main-button">
+                                        <a href="/Search">Search Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ***** Banner End ***** -->
+                    <!-- ***** Live Stream Start ***** -->
+                    <div class="live-stream">
+                        <div class="col-lg-12">
+                            <div class="heading-section">
+                                <h4><em>Some Popular</em> Paintings</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="item">
+                                    <div class="thumb">
+                                        <img src="@Model.Images[0]" width="350" height="350" alt="">
+                                        <div class="hover-effect">
+                                            <div class="content">
+                                                <div class="live">
+                                                    <a href="/Search">@Model.Paints[0].data.artist_title.ToString()</a>
+                                                </div>
+                                                <ul>
+                                                    <li><a href="/Search">@Model.Paints[0].data.title</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="item">
+                                    <div class="thumb">
+                                        <img src="@Model.Images[1]" width="350" height="350" alt="">
+                                        <div class="hover-effect">
+                                            <div class="content">
+                                                <div class="live">
+                                                    <a href="/Search">@Model.Paints[1].data.artist_title.ToString()</a>
+                                                </div>
+                                                <ul>
+                                                    <li><a href="/Search">@Model.Paints[1].data.title.ToString()</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="item">
+                                    <div class="thumb">
+                                        <img src="@Model.Images[2]" width="350" height="350" alt="">
+                                        <div class="hover-effect">
+                                            <div class="content">
+                                                <div class="live">
+                                                    <a href="/Search">@Model.Paints[2].data.artist_title.ToString()</a>
+                                                </div>
+                                                <ul>
+                                                    <li><a href="/Search">@Model.Paints[2].data.title.ToString()</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="item">
+                                    <div class="thumb">
+                                        <img src="@Model.Images[11]" width="350" height="350" alt="">
+                                        <div class="hover-effect">
+                                            <div class="content">
+                                                <div class="live">
+                                                    <a href="/Search">@Model.Paints[11].data.artist_title.ToString()</a>
+                                                </div>
+                                                <ul>
+                                                    <li><a href="/Search">@Model.Paints[11].data.title.ToString()</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="item">
+                                    <div class="thumb">
+                                        <img src="@Model.Images[4]" width="350" height="350" alt="">
+                                        <div class="hover-effect">
+                                            <div class="content">
+                                                <div class="live">
+                                                    <a href="/Search">@Model.Paints[4].data.artist_title.ToString()</a>
+                                                </div>
+                                                <ul>
+                                                    <li><a href="/Search">@Model.Paints[4].data.title.ToString()</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="item">
+                                    <div class="thumb">
+                                        <img src="@Model.Images[5]" width="350" height="350" alt="">
+                                        <div class="hover-effect">
+                                            <div class="content">
+                                                <div class="live">
+                                                    <a href="/Search">@Model.Paints[5].data.artist_title.ToString()</a>
+                                                </div>
+                                                <ul>
+                                                    <li><a href="/Search">@Model.Paints[5].data.title.ToString()</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="item">
+                                    <div class="thumb">
+                                        <img src="@Model.Images[10]" width="350" height="350" alt="">
+                                        <div class="hover-effect">
+                                            <div class="content">
+                                                <div class="live">
+                                                    <a href="/Search">@Model.Paints[10].data.artist_title.ToString()</a>
+                                                </div>
+                                                <ul>
+                                                    <li><a href="/Search">@Model.Paints[10].data.title.ToString()</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="item">
+                                    <div class="thumb">
+                                        <img src="@Model.Images[7]" width="350" height="350" alt="">
+                                        <div class="hover-effect">
+                                            <div class="content">
+                                                <div class="live">
+                                                    <a href="/Search">@Model.Paints[7].data.artist_title.ToString()</a>
+                                                </div>
+                                                <ul>
+                                                    <li><a href="/Search">@Model.Paints[7].data.title.ToString()</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="item">
+                                    <div class="thumb">
+                                        <img src="@Model.Images[9]" width="350" height="350" alt="">
+                                        <div class="hover-effect">
+                                            <div class="content">
+                                                <div class="live">
+                                                    <a href="/Search">@Model.Paints[9].data.artist_title.ToString()</a>
+                                                </div>
+                                                <ul>
+                                                    <li><a href="/Search">@Model.Paints[9].data.title.ToString()</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="main-button">
+                                    <a href="/Search">Explore More Paintings</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ***** Live Stream End ***** -->
+                    <!-- ***** Gaming Library Start ***** -->
+                    <div class="gaming-library">
+                        <div class="col-lg-12">
+                            <div class="heading-section">
+                                <h4><em>Your Exhibition</em> Library</h4>
+                            </div>
+                            @for (var i = 0; i < 3; i++)
+                            {
+                                var item = Model.exhData.data[i];
+                                <div class="item">
+                                    <ul>
+                                        <li><img src="@item.image_url" alt="" class="templatemo-item" width="150"></li>
+                                        <li><h4>@item.gallery_title</h4><span>Artwork: "@item.title"</span></li>
+                                        <li><h4>Date Added</h4><span>@item.source_updated_at</span></li>
+                                        <li><h4>Start Date</h4><span>@item.aic_start_at</span></li>
+                                        <li><h4>End Date</h4><span>@item.aic_end_at</span></li>
+                                        <li><div class="main-border-button border-active"><a href="#">Buy Ticket</a></div></li>
+                                    </ul>
+                                </div>
+                            }
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="main-button">
+                                <a href="/Exhibitions">Explore More Exhibitions</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ***** Gaming Library End ***** -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

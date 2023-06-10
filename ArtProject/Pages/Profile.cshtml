@@ -1,0 +1,157 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Profil";
+}
+@*<h1>@ViewData["Title"]</h1>*@
+
+
+<body>
+
+    @if (Model.isLogged)
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-content">
+
+                        <!-- ***** Banner Start ***** -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="main-profile ">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <img src="~/images/profile2.jpg" alt="" style="border-radius: 23px;">
+                                        </div>
+                                        <div class="col-lg-4 align-self-center">
+                                            <div class="main-info header-text">
+                                                <span>Member</span>
+                                                <h4>@Model.userLogged.Name</h4>
+                                                <p>You can discover new exhibits in our website</p>
+                                                @*<div class="main-border-button">
+                                                    <a href="#">Start Live Stream</a>
+                                                </div>*@
+                                                <span>
+                                                    <form method="post" asp-page-handler="DeleteRequest">
+                                                        <button type="submit" style="border:none; background:none; color:white;">Delete Account</button>
+                                                        <input type="hidden" name="UserName" value=@Model.userLogged.Username asp-for="UserName">
+                                                    </form>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 align-self-center">
+                                            <ul>
+                                                <li>E-Mail <span>@Model.userLogged.Email</span></li>
+                                                <li>Age <span>@Model.userLogged.Age</span></li>
+                                                <li>Active Tickets <span>None</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="clips">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="heading-section">
+                                                            <h4><em>Your</em> Tickets</h4>
+                                                        </div>
+                                                    </div>
+                                                    @for (var i = 16; i < 20; i++)
+                                                       {
+                                                        var item = Model.exhData.data[i];
+                                                        if (String.IsNullOrEmpty(item.gallery_title))
+                                                            item.gallery_title = "Gallery 404";
+                                                        <div class="col-lg-3 col-sm-6">
+                                                            <div class="item" style="text-align: center;">
+                                                                <div>
+                                                                    <a href="#" target="_blank">
+                                                                        <img src="@item.image_url" alt="" style="border-radius: 23px; height: 150px;">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="down-content" style="margin-top: 18px;">
+                                                                    <h4>@item.gallery_title</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                     }
+                                                    <div class="col-lg-12">
+                                                        <div class="main-button">
+                                                            <a href="#">Load More Tickets</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ***** Banner End ***** -->
+                        <!-- ***** Gaming Library Start ***** -->
+                        @*<div class="gaming-library profile-library">
+                            <div class="col-lg-12">
+                                <div class="heading-section">
+                                    <h4><em>Your Gaming</em> Library</h4>
+                                </div>
+                                <div class="item">
+                                    <ul>
+                                        <li><img src="~/images/game-01.jpg" alt="" class="templatemo-item"></li>
+                                        <li><h4>Dota 2</h4><span>Sandbox</span></li>
+                                        <li><h4>Date Added</h4><span>24/08/2036</span></li>
+                                        <li><h4>Hours Played</h4><span>634 H 22 Mins</span></li>
+                                        <li><h4>Currently</h4><span>Downloaded</span></li>
+                                        <li><div class="main-border-button border-no-active"><a href="#">Donwloaded</a></div></li>
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <ul>
+                                        <li><img src="~/images/game-02.jpg" alt="" class="templatemo-item"></li>
+                                        <li><h4>Fortnite</h4><span>Sandbox</span></li>
+                                        <li><h4>Date Added</h4><span>22/06/2036</span></li>
+                                        <li><h4>Hours Played</h4><span>745 H 22 Mins</span></li>
+                                        <li><h4>Currently</h4><span>Downloaded</span></li>
+                                        <li><div class="main-border-button border-no-active"><a href="#">Donwloaded</a></div></li>
+                                    </ul>
+                                </div>
+                                <div class="item last-item">
+                                    <ul>
+                                        <li><img src="~/images/game-03.jpg" alt="" class="templatemo-item"></li>
+                                        <li><h4>CS-GO</h4><span>Sandbox</span></li>
+                                        <li><h4>Date Added</h4><span>21/04/2022</span></li>
+                                        <li><h4>Hours Played</h4><span>632 H 46 Mins</span></li>
+                                        <li><h4>Currently</h4><span>Downloaded</span></li>
+                                        <li><div class="main-border-button border-no-active"><a href="#">Donwloaded</a></div></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>*@
+                        <!-- ***** Gaming Library End ***** -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    else
+    {
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="page-content">
+                <h1 class="display-1">Welcome</h1>
+                <div class="d-flex justify-content-around text-center align-items-center" style="margin-top:20px;">
+                    <div style="display:flex; flex-direction:column; justify-content:space-evenly;width:40%; padding:0 5%; height:105px">
+                        <h5>New to ArtProject?</h5>
+                        <a asp-page="SignUp" style="border:none;background-color:#E15686;margin-top:15px; font-weight:600; font-size:24px; padding:15px; border-radius:10px;">Sign Up</a>
+                    </div>
+                    <div style="display:flex; flex-direction:column; justify-content:space-evenly;width:40%; padding:0 5%">
+                        <h5>Already have an account?</h5>
+                        <a asp-page="LogIn" style="border:none;background-color:#E15686;margin-top:15px; font-weight:600; font-size:24px; padding:15px; border-radius:10px;">Log In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    }
+</body>

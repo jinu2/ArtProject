@@ -1,0 +1,91 @@
+﻿@page
+@model ArtProject.Pages.SearchModel
+@{
+}
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" style="margin-top:130px">
+                <form asp-page-handler="SearchRequest" method="post" class="w-100">
+                    <div class="p-1 bg-dark rounded rounded-pill shadow-sm mb-4">
+                        <div class="input-group">
+                            <input type="search" asp-for="SearchKeyword" placeholder="Search Painter" aria-describedby="button-addon1" class="form-control border-0">
+                            <div class="input-group-append">
+                                <button id="button-addon1" type="submit" class="btn btn-link text-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-12">
+                <div class="page-content">
+                    <div class="row" style="margin-bottom:10px">
+                        <div class="col-lg-12" style="margin-bottom:10px">
+                            <h1>@Model.artistName</h1>
+                        </div>
+                    </div>
+                    <!-- ***** Featured Start ***** -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="feature-banner header-text">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <img src="@Model.painterImage" alt="" style="border-radius: 23px;">
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <article><p>@Model.painterText</p></article>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ***** Featured End ***** -->
+                    <!-- ***** Details Start ***** -->
+                    <div class="game-details">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h2>Artworks</h2>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="content">
+                                    <div class="container">
+                                        <div class="row row-cols-3" style="margin-top:15px">
+                                            @for (int i = 0; i < Model.Images.Count; i++)
+                                            {
+                                                <div class="col-lg-4 col-sm-6">
+                                                    <div class="item">
+                                                        <div class="thumb">
+                                                            <img src="@Model.Images[i]" width="350" height="350" alt="">
+                                                            <div class="hover-effect">
+                                                                <div class="content">
+                                                                    <ul>
+                                                                        <li style="color:pink">@Model.ImageNames[i]</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ***** Details End ***** -->
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
